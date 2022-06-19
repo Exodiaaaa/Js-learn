@@ -1,0 +1,1545 @@
+
+<script>
+    console.log("Hola");//inline comment
+    /* 
+multiline comment
+*/
+
+/* undefined,null,boolean,string,symbol,number,and object */
+/* var , let ,const to declare variables */
+//let only be used on the scope when declare that
+// var used on all project 
+//const never changed
+//remainder %
+var a;//declare variable
+var b=2;//assign variable 
+var z="machit\"lghaba\"outal9It\"zaba";//or
+var z='machit "lghaba" ou l9it "zaba';//or
+var z=`'mchit' "lghaba" 'ou l9it' "zaba"`;
+
+var testlength=0;
+var test="Javascript"
+var testFirstCharactere="";
+var testLastCharactere="";
+testLastCharactere=test[test.length-1];
+testFirstCharactere=test[0];
+testlength=test.length;
+console.log(testlength);
+console.log(testFirstCharactere);
+console.log(testLastCharactere);
+
+var h="Zabascript";
+h[0]="Z";//impossible cause strings are immutible in javascript
+//solution is standart 
+h="Javascript";
+
+//console.log show message on console
+
+function wordBlanks(myNoun,MyAdjective,myVerb,myAdverb){
+    var result="";
+    result+= "The " + MyAdjective+" "+myNoun+" "+myVerb+" to the store " + myAdverb;
+
+    return result;
+}
+console.log(wordBlanks("dog","big","ran","quickly"));
+console.log(wordBlanks("bike","slow","flew","slowly"))
+
+//array
+var nameArray=["Imran",22,"Oujda"];
+nameArray.push(["Abdeilah",23]);
+var indexArray=nameArray[0];//["Imran"]
+
+//nested array
+var nameArray=[["Imran",22],["Anass",22]];
+
+var indexArray=nameArray[0];//["Imran",22]
+var indexArray=nameArray[0][1];//[22]
+
+var ourArray=[1,2,3];
+var removedFromOurArray=ourArray.pop();//the last element will be removed so our array now contains[1,2]
+var removedFromOurArray=ourArray.shift();//the first element will be removed so our array now contains[2]
+ourArray.shift(1)//unshift life push but she add element at the begining of the array not at the last like push
+
+ourArray[2]=9;
+console.log(ourArray); 
+//shoplist exemple
+var myList=[["gateau",20],["orange juice",13],["Taccos",5]];
+
+//function 
+function testos(){
+    console.log("Hello world");
+}
+testos();
+function fwithargs(a, b){
+    console.log(a*b);
+}
+fwithargs(2, 2);
+
+//scope
+//global scope
+var globalVar=5;
+
+function f1(){
+    oopsglobal=5;
+
+}
+
+function f2(){
+    var output="";
+    if(typeof globalVar != "undefined"){
+        output += "globalVar :"+globalVar;
+    }
+    if(typeof oopsglobal != "undefined"){
+        output+="oopsglobal :"+oopsglobal;
+    }
+    console.log(output);
+}
+f1();
+f2();
+function myLocalScope(){
+    var myVar=5;
+    console.log(myVar);
+}
+myLocalScope();
+
+var outerWear="T-shirt";
+
+function myOutfit(){
+    var outerWear="sweater";
+    return outerWear;
+}
+console.log(myOutfit());
+console.log(outerWear);
+function timesFive(num){
+    return num * 5;
+}
+console.log(timesFive(5));
+
+var sum = 0;
+function addFive(){
+    sum+=5;
+}
+console.log(addFive());
+
+var changed=0;
+function change(num){
+    return (num+5)/3;
+}
+changed=change(5);
+
+function nextInLine(arr,item){
+    arr.push(item);
+    return arr.shift();//.shift() remove first item and return it
+}
+var testArr=[1,2,3,4,5];
+console.log("Before : "+ JSON.stringify(testArr));
+console.log(nextInLine(testArr,6));
+console.log("After : "+ JSON.stringify(testArr));
+
+//boolean
+function welcomeToBooleans(){
+    return true;
+}
+
+function ourTrueOrFalse(isItTrue){
+    if(isItTrue){
+        return "Yes, it's true";
+    }
+    return "No , it's false";
+}
+
+function trueOrFalse(wasThatTrue){
+    if(wasThatTrue){
+        return "Yes , that was true";
+    }
+    return "No, that was false";
+}
+
+console.log(trueOrFalse(true));
+
+function testEqual(val){
+    if(val == 12){
+        return "Equal";
+    }
+    return"not Equal";
+}
+console.log(testEqual(10));
+
+//strict equality ===
+/* we test also the datatype
+3 === 3 true
+3 === '3' false
+*/
+function testStrict(val){
+    if(val === 12){
+        return "Equal";
+    }
+    return"not Equal";
+}
+console.log(testStrict('12'));
+
+function compareEquality(a, b){
+    if(a == b ){
+        return " a Equal b";
+    }
+    return "a is Not Equal b";
+}
+console.log(compareEquality(10, '10'));
+
+function compareEqualityStrict(a, b){
+    if(a === b ){
+        return " a Equal b";
+    }
+    return "a is Not Equal b";
+}
+console.log(compareEqualityStrict(10,'10'));
+
+function testNotEqual(val){
+    if(val != 12){
+        return "Not Equal";
+    }
+    return "Equal";
+}
+console.log(testNotEqual(69));
+
+function testNotEqualStrict(val){
+    if(val !== 12){
+        return "Not Equal";
+    }
+    return "Equal";
+}
+console.log(testNotEqualStrict("12"));
+
+function testGreaterThan(val){
+    if(val>100){
+        return "greater than 100";
+    }
+    if(val > 10){
+        return "greathan than 10";
+    }
+    return "10 or under";
+}
+console.log(testGreaterThan(5));
+
+function testGreaterThanOrEqual(val){
+    if(val>=100){
+        return "100 or over";
+    }
+    if(val >=10){
+        return " 10 or over";
+    }
+    return "less than 10";
+}
+console.log(testGreaterThanOrEqual(10));
+
+function testLessThan(val){
+    if(val<100){
+        return "Less than 100";
+    }
+    if(val < 10){
+        return "Less than 10";
+    }
+    return "10 or more";
+}
+console.log(testLessThan(150));
+
+function testLessThanOrEqual(val){
+    if(val<=100){
+        return "Smaller or equal to 100";
+    }
+    if(val <= 10){
+        return "Smaller or equal to 10";
+    }1
+    return " more than 100";
+}
+console.log(testLessThan(120));
+
+function testLogicalAnd(val){
+    if(val <= 50 && val >= 25){
+        return "Yes";
+    }
+    return "No";
+}
+console.log(testLogicalAnd(51));
+
+function testLogicalOr(val){
+    if(val < 10 || val > 20){
+        return "Outside";
+    }
+    return "inside";
+}
+console.log(testLogicalOr(15));
+
+function testElse(val){
+    var result="";
+    if(val>5){
+        result ="Bigger than 5 ";
+    }else {
+        result ="5 or smaller 5"
+    }
+}
+console.log(testElse(10));
+
+function testElseIf(val){
+    if(val > 10){
+        return "greater than 10";
+    }else if(val <5){
+        return "smaller than 10";
+    }else{
+        return " between 5 and 10";
+    }
+}
+
+console.log(testElseIf(4));
+
+function orderMyLogic(val){
+    if(val < 5){
+        return "Less than 5";
+    }else if(val<10){
+        return "Less than 1O";
+    }else{
+        return "Greater than or equal to 10";
+    }
+}
+console.log(orderMyLogic(3));
+
+/*
+Write chaine if/Else if statements to fulfill the following  conditions:
+num < 5 - return "Tiny"
+num < 10 - return "Small"
+num < 15 - return "Medium"
+num < 20 - return "Large"
+num >= 20 - return "Huge"
+*/
+function testSize(val){
+    if(val<5){
+        return "Tiny";
+    }else if(val<10){
+        return "Small";
+    }else if(val<15){
+        return "Medium";
+    }else if(val < 20){
+        return "Large";
+    }else if(val >= 20){
+        return "Huge";
+    }
+}
+console.log(testSize(20));
+/*golf Code
+
+Strokes Return
+1       "Hole-in-one!"
+<= par - 2 "Eagle"
+par - 1 "Birdie"
+par     "Par"
+par + 1 "Bogey"
+par + 2 "Double Bogey"
+>= par + 3 "Go Home!"
+*/
+
+var names=["Hole-in-one","Eagle","Birdie","Par","Bogey","Double Bogey","Go Home!"];
+function golfScore(par, strokes){
+    if(strokes==1){
+        return names[0];
+    }else if(strokes<=par-2){
+        return names[1];
+    }else if(strokes==par-1){
+        return names[2];
+    }else if(strokes==par){
+        return names[3];
+    }else if(strokes==par+1){
+        return names[4];
+    }else if(strokes==par+2){
+        return names[5];
+    }else if(strokes>=par+3){
+        return names[6];
+    }
+}
+console.log(golfScore(5,8));
+
+//switch statements switch statements test with strict equality not the simple equality
+/*write a statement  which tests val and sets answer for the following conditions:
+1-"alpha"
+2-"beta"
+3-"gamma"
+4-"delta"
+ */
+function caseInSwitch(val){
+    var tr="";
+    switch(val){
+        case 1:
+            tr="alpha";
+            break;
+        case 2:
+            tr="beta";
+            break;
+        case 3:
+            tr="gamma";
+            break;
+        case 4:
+            tr="delta";
+            break;
+    }
+    return tr;
+}
+console.log(caseInSwitch(2));
+
+function SwitchOfStuff(val){
+    var tr="";
+    switch(val){
+        case "a":
+            tr="apple";
+            break;
+        case "s":
+            tr="samsung";
+            break;
+        case "o":
+            tr="oppo";
+            break;
+        case "h":
+            tr="huewai";
+            break;
+        default:
+            tr="nokia pile"
+            break;
+    }
+    return tr;
+}
+console.log(SwitchOfStuff("d"));
+
+function sequentialSizes(val){
+    var tr="";
+    switch(val){
+        case 1:
+        case 2:
+        case 3:
+            tr="Low";
+            break;
+        case 4:
+        case 5:
+        case 6:
+            tr="MEDIUM";
+            break;  
+        case 7:
+        case 8:
+        case 9:
+            tr="HIGH";
+            break;
+    }
+    return tr;
+}
+console.log(sequentialSizes(5));
+
+function chainToSwitch(val){
+    var tr="";
+    //this if else to
+    /*
+    if(val==="bob"){
+        tr="Marley";
+    }else if(val ===42){
+        tr="The answer";
+    }else if(val===1){
+        tr="There is no #1";
+    }else if(val===99){
+        tr="Missed me by this much !";
+    }else if(val===7){
+        tr="Ate Nine";
+    }*/
+    //this switch statement
+    switch(val){
+        case "bob":
+            tr="Marley";
+            break;
+        case 42:
+            tr="There is no #1";
+            break;
+        case 1:
+            tr="There is no #1";
+            break;
+        case 99:
+            tr="Missed me by this much !";
+            break;
+        case 7:
+            tr="Ate Nine";
+            break;
+    }
+    return tr;
+}
+console.log(chainToSwitch("bob"));
+
+function isLess(a, b){
+   /* if(a<b){
+        return true;
+    }
+    return false;*/
+//skip this logic with 
+    return a<b ;
+}
+
+console.log(isLess(20,15));
+
+function abTest(a,b){
+    if(a<0 || b<0){
+        return undefined;
+    }
+
+    return Math.round(Math.pow(Math.sqrt(a)+Math.sqrt(b),2));
+}
+console.log(abTest(2,-2));
+
+
+//black jack counting card 
+var count=0;
+function cc(card){
+    switch(card){
+        case 2:
+        case 3:
+        case 4:
+        case 5:
+        case 6:
+            count++;
+            break;
+        case 10:
+        case 'J':
+        case 'Q':
+        case 'K':
+        case 'A':
+            count--;
+            break;
+    }
+    var bet="hold";
+    if(count>0){
+        return 'Bet';
+    }
+    return count + " " + bet;
+}
+cc(2);cc('K');cc(10);cc('K');cc('A');
+console.log(cc('Q'));
+
+//Js build objects
+var ourGame={
+    "name":"Valorant",
+    "Type":"Fps",
+    "the raiting":8,
+    "the quote":["Valorante"]
+};  
+
+var gameName=ourGame.name;
+var gameType=ourGame.Type;
+
+console.log(gameName,gameType);
+//we use brackets to acces long name like those under this text
+var gameRaiting=ourGame["the raiting"];
+var gameQuote=ourGame['the quote'];
+
+console.log(gameRaiting,gameQuote);
+
+//Accesing object properties with variables
+var testObj={
+    11:"hassan",
+    12:"gonzalez",
+    13:"chkamba"
+};
+
+var namePerson=11;
+var person=testObj[namePerson];
+
+console.log(person);
+
+// update object properties 
+ourGame.name="League of legends";
+console.log(ourGame.name);
+
+//Add new properties to an object
+ourGame.community="trash";
+console.log(ourGame.community);
+//Delete properties to an object
+delete ourGame.community;
+//Objects for lookups
+function phoneticLookup(val){
+    var r="";
+    //replace this switch  by objects lookup
+   /* switch(val){
+        case 'alpha':
+            r='adams';
+            break;
+        case 'bravo':
+            r='Boston';
+            break;
+        case "charlie":
+            r='Chicago';
+            break;
+        case "delta":
+            r="Denver";
+            break;
+        case "echo":
+            r="Easy";
+            break;
+        case "foxtrot":
+            r="Frank";
+            break;
+    }*/
+    var lookUp={
+        "alpha":"Adams",
+        "bravo":"Boston",
+        "charlie":"Chicago",
+        "delta":"Denver",
+        "echo":"Easy",
+        "foxtrot":"Frank"
+    }
+    r=lookUp[val];
+    return r;
+}
+console.log(phoneticLookup("echo"));
+
+//Testing objects for properties
+var myObj={
+    gift:"pony",
+    pet:"kitten",
+    bed:"sleigh"
+};
+
+function checkObj(checkProp){
+    if(myObj.hasOwnProperty(checkProp)){
+        return myObj[checkProp];
+    }
+    return "Not found";
+}
+console.log(checkObj("test"));
+
+//Manipulating complex  Objects
+var myMusic=[
+    {
+        "artist":"The Weekend",
+        "title":"Piano Man",
+        "release_year":1973,
+        "formats":[
+            "CD",
+            "8T",
+            "LP"
+        ],
+        "gold":true
+    },
+    //our new record
+    {
+        "artist":"Cheb bello",
+        "title":"3dyani bl gros",
+        "release_year":2020,
+        "formats":[
+            "Youtube video"
+        ]
+    }
+];
+//access nested objects
+var myStorage={
+    "car":{
+        "inside":{
+            "glove-box":"maps",
+            "passenger seat":"crumbs"
+        },
+        "outside":{
+            "trunk":"jack"
+        }
+    }
+};
+
+var gloveBoxContentContentes=myStorage.car.inside["glove-box"];
+console.log(gloveBoxContentContentes);
+//access nested arrays
+var myPlants=[
+    {
+        type:"flowers",
+        list:[
+            "rose",
+            "tulip",
+            "dandelion"
+        ]
+    },
+    {
+        type:"trees",
+        list:[
+            "fir",
+            "pine",
+            "birch"
+        ]
+    }
+];
+
+var secondTree=myPlants[1].list[1];
+console.log(secondTree);
+
+//Record Collection
+
+var collection={
+    "2548":{
+        "album":"After hours",
+        "artist":"Bon jovi",
+        "tracks":[
+            "Save your tears",
+            "Blinding by the lights"
+        ]
+    },
+    "2468":{
+        "album":"cagoule",
+        "artist":"lferda",
+        "tracks":[
+            "hallowen 2"
+        ]
+    },
+    "1245":{
+        "artist":"Robert Palmer",
+        "tracks":[]
+    },
+    "5439":{
+        "album":"ABBA Gold"
+    }
+
+};
+
+var collectionCopy=JSON.parse(JSON.stringify(collection));
+
+function updateRecords(id,prop,value){
+    if(value===""){
+        delete collection[id][prop];
+    }else if(prop==="tracks"){
+        collection[id][prop] = collection[id][prop] || [];
+        collection[id][prop].push(value);
+    }else{
+        collection[id][prop]=value;
+    }
+    return collection;
+}
+console.log(updateRecords(1245,"tracks","bzazlymak"));
+console.log(updateRecords(5439,"artist","ABBA"));
+
+//while loop 
+var tableau=[];
+
+var i=0;
+while(i<5){
+    tableau.push(i);
+    i++;
+}
+console.log(tableau);
+
+//for loop
+
+var tableaul=[];
+for(var i=1;i<6;i++){
+    tableaul.push(i);
+}
+
+console.log(tableaul);
+
+var tab=[];
+//display odd numbers
+for(var i=1;i<10;i+=2){
+    tab.push(i);
+}
+
+console.log(tab);
+//count backwards
+var tabN=[];
+for(var i=9;i>0;i-=2){
+    tabN.push(i);
+}
+console.log(tabN);
+
+//iterate through an array
+
+var ftab=[6,9,9,6];
+var ft=0;
+for(var i=0;i<ftab.length;i++){
+    ft+=ftab[i];
+}
+console.log(ft);
+//nesting loops
+function multiplyAll(arr){
+    var product=1;
+    for(var i=0;i<arr.length;i++){
+        for(var j=0;j<arr[i].length;j++){
+            product*=arr[i][j];
+        }
+    }
+    return product;
+
+}
+console.log(multiplyAll([[1,2],[3,4],[5,6,7]]));
+
+//Do...while loop
+
+var tb=[];
+var i=10;
+
+do{
+    tb.push(i);
+    i++
+}while(i<5)
+
+console.log(i,tb);
+//Profile lookup
+var contacts=[
+    {
+        "firstName":"Akira",
+        "lastName":"Laine",
+        "number":0745123456,
+        "likes":["boobs","pussy"]
+    },
+    {
+        "firstName":"rachad",
+        "lastName":"nagaz",
+        "number":0745123456 ,
+        "likes":["llbzol","chawarma"]
+    },
+    {
+        "firstName":"Anass",
+        "lastName":"Soulimani",
+        "number":0745123456,
+        "likes":["L7sen","lbeldi"]
+    },
+    {
+        "firstName":"Abdelilah",
+        "lastName":"lamhamdi",
+        "number":"unknown",
+        "likes":["li ja bsmlah","pussy"]
+    }
+];
+
+function lookUpProfile(name,prop){
+    for(var i=0;i<contacts.length;i++){
+        if(contacts[i].firstName===name && contacts.prop!=prop){
+            return contacts[i][prop] || "No such property";
+
+        }
+    }
+    return "no such contact";
+}
+console.log(lookUpProfile("Abdelilah","n"));
+//generate random fractions
+
+function randomFraction(){
+    return Math.random();
+}
+console.log(randomFraction());
+
+//generate whole numbers
+//var randomNumberBetween0and99=Math.floor(Math.random*100);
+function randomWholeNum(){
+
+    return Math.floor(Math.random()*10);//number between 0 and 9
+
+}
+console.log(randomWholeNum());
+//generate random whole numbers within a range
+function ourRandomRange(ourMin,ourMax){
+    return Math.floor(Math.random()*(ourMax-ourMin+1))+ourMin;
+}
+ourRandomRange(1,9);
+
+
+function randomWithRange(min,max){
+    return Math.floor(Math.random()*(max-min+1))+min;
+}
+console.log(randomWithRange(5,20));
+//Use the parseInt Function
+function convertIntoIntegre(str){
+    return parseInt(str);
+}
+
+console.log("102");
+function convertIntoIntegreWithRadix(str){
+    return parseInt(str,2);
+
+}
+console.log(convertIntoIntegreWithRadix("10011"));  
+//ternary operator
+//condition ? statement-if-true : statement-if-false;
+
+function blabla(a,b){
+    //simple if
+    /*if(a===b){
+        return true;
+    }else{
+        return false;
+    }*/
+    return a===b?true:false;
+    //or return a===b; 
+}
+
+console.log(blabla(2,2));
+//multiple conditions using ternary experssion
+function checkSign(num){
+    //       if  =>         elseif=>           else=>
+    return num>0?"positive":num<0 ? "Negative":"Zero";
+
+}
+console.log(checkSign(0));
+
+//Difference between var and let
+//let doesnt make you declare a variable twice 
+let catName="Quincy";
+var qawt;
+
+catName="Beau";
+
+function catTalk(){
+    "use strict";
+//to catch coding mistake and unsafe action
+    catName="Oliver";
+    qawt=catName+" Says Meow!";
+
+}
+console.log(catTalk());
+
+//Compare Scopes of the var and let keywords as using variable without declare it with var or const
+//var global and local if declare inside fonction | let limited for block statement or expression declared in
+function checkScope(){
+    "use strict";
+    let i="function scope";
+    if(true){
+        let i="block scope";
+        console.log('block scope i is:',i);
+    }
+    console.log("Function scope i is:",i);
+    return i;
+}
+console.log(checkScope());
+//Declare a Read-Only Variable with the const keyword
+//const same specifications like let but its read only you cant re-assing a cast 
+//if you want for sure to not re assign a  varible use const
+//when use const write the const with caps
+
+function printManyTimes(str){
+    "use strict";
+    const SENTENCE=str+"is cool!";
+
+    for(let i=0;i<str.length;i+=2){
+        console.log(SENTENCE);
+    }
+}
+printManyTimes("JavaScript");
+//Mutate an array declared with const
+const s=[5,7,2];
+function editInPlace(){
+    "use strict";
+    s[0]=2;s[1]=5;s[2]=7;
+    console.log(s);
+}
+editInPlace();
+//Prevent Object mutation
+function freezeObj(){
+    "use strict";
+    const MATH_CONSTANTS={
+        PI:3.14
+    };
+    //we froze MATH_CONSTANTS
+    Object.freeze(MATH_CONSTANTS);
+    try{
+        MATH_CONSTANTS.PI=99;
+    }catch(ex){
+        console.log(ex);
+    }
+    return MATH_CONSTANTS.PI;
+}
+
+console.log(freezeObj());
+// use arrow function to write concise anonymous functions
+//anoonymous function
+var magic= function (){
+    return new Date();
+};
+//when we have anonymous function we can write it with arrow function like that
+var magic=()=>{
+    return new Date();
+};
+//when we have only one return we can write it like that
+//const magic= () => new Date();
+//write Arrow function with Parameters
+const myConcat=(arr1,arr2)=>arr1.concat(arr2);
+console.log(myConcat([1,2],[3,4,5]));
+//write higher order arrow functions
+//work really well withn higher order function such as map,filter,reduce
+//we take function as an argument to process data
+const realNumberArray=[4,5.6,-9.8,-3.14,42,6,8.34,-2];
+
+const squareList = (arr)=>{
+                                    //filter only integre number from array  | do the square of the value of our filter 
+    const squaredIntegers=arr.filter(num=>Number.isInteger(num) && num > 0).map(x =>x*x);
+    return squaredIntegers;
+};
+const squaredIntegers=squareList(realNumberArray);
+console.log(squaredIntegers);
+//Default parametres
+const increment=(function(){
+    return function increment(number,value=1) {
+        return number+value;
+    };
+})();
+console.log(increment(5));
+console.log(increment(5,2));
+//use the rest operator
+const sumi=( ()=> {
+    return function sum(x,y,z){
+        const args=[x,y,z];
+        return args.reduce((a,b)=>a+b,0);
+    }
+
+})();
+console.log(sumi(1,2,3));
+
+//...args with this rest operator it will convert everything passing in into 1 array and the array called args in the example
+const suma=(()=>{
+    return function sum(...args){
+        return args.reduce((a,b)=>a+b,0);
+    }
+
+})();
+console.log(suma(1,2,3,4));
+//use spread operator to Evaluate Arrays In-Place
+//the spread operator looks like the rest operator but it expends on an existant array or spread out on array into it individual part
+const arrm=['JAN','FEV','MAR','AP   R','MAY'];
+let arrmo;
+(()=>{
+    arrmo=[...arrm];//we use spred operator ou take the value or arrm before change
+    arrm[1]='potato';
+})();
+console.log(arrmo)
+//Destructuring Assignement to Assign Variables  from Objects
+var voxel={x:3.6,y:7.4,z:6.54};
+
+var x=voxel.x;
+var y=voxel.y;
+var z=voxel.z;
+//or
+const {x : n , y : g , z : l}= voxel;//Destructuring assingement
+
+const AVG_TEMP={
+    today:45,
+    tomorrow:50
+};
+function getTempOfTmrw(avgTemp){
+    "use strict";
+    const {tomorrow:tempOfTommorow}=avgTemp;
+    return tempOfTommorow;
+}
+console.log(getTempOfTmrw(AVG_TEMP));
+//Destructuring Assignement with Nested Objects
+const LOCAL_FORECAST={
+    today:{min:40,max:45},
+    tomorrow:{min:42,max:47}
+};
+function getMaxOfTmrw(forecast){
+    "use strict";
+
+    const{tomorrow:{max:maxForTomorrow}}=forecast;
+    return maxForTomorrow;
+}
+
+    
+
+console.log(getMaxOfTmrw(LOCAL_FORECAST));
+//{} called curly bracess
+
+//Destructuring assignement to assign variables from arrays
+
+const [m, v, ,o ]=[1,2,3,4,5];
+console.log(z, x, y);
+
+let p=8;
+let f=6;
+(()=>{
+    "use strict";
+    [p,f]=[f,p];
+})();
+console.log(p);
+console.log(f);
+
+//use Destructuring Assignement with the rest operator
+const source=[1,2,3,4,5,6,7,8,9,10];
+function removeFirstTwo(list){
+    const [ , ,...arr]=list;
+    return arr;
+}
+const arr=removeFirstTwo(source);
+console.log(arr);
+console.log(source);
+//Use Destructuring Assignement to Pass an Object as Function's Parametres   
+const stats={
+    max:56.78,
+    standard_deviation:4.34,
+    median:34.54,
+    mode:23.87,
+    min:-0.75,
+    average:35.85
+};
+const half=(()=>{
+    return function half({max,min})
+    {
+        return(max+min)/2.0;
+    };
+})();
+console.log(stats);
+console.log(half(stats));
+//Create Strings using Template Literals
+const bnadem ={
+    name:"Hassan lkhel",
+    age:69
+};
+//template literal with multi-line and string interpolation
+const greeting=`Hello, my name is ${bnadem.name}!
+I am ${bnadem.age} years old.`;
+
+console.log(greeting);
+
+const natija={
+    success:["max-length","no-amd","prefer-arrow-functions"],
+    failure:["no-var","var-on-top","linebreak"],
+    skipped:["id-blacklist","no-dup-keys"]
+};
+function makeList(arr){
+    const resultDisplayArray = [];
+    for(let i=0;i<arr.length;i++){
+        resultDisplayArray.push(`<li class="text-warning">${arr[i]}</li>`);
+    }
+
+    return resultDisplayArray;
+}
+
+/**
+ * makelist(natija.failure) should return:
+ * [`<li class="text-warning">no-var</li>`,
+ *  `<li class="text-warning">var-on-top</li>`,
+ *  `<li class="text-warning">linebreak</li>`]
+ **/
+console.log(makeList(natija.skipped));
+//write concise object literal declarations using simple fields
+const createPerson=(name,age,gender)=>({name,age,gender});//this is a simple way to write the code below
+/*{
+    return{
+        name:name,
+        age:age,
+        gender:gender
+    }
+};*/
+console.log(createPerson("Hassan zabanga",25,"Male"));
+//write concise declarative function
+const bicycle={
+    gear:2,
+    setGear(newGear){
+        "use strict";
+        this.gear=newGear;
+    }
+};
+bicycle.setGear(3);
+console.log(bicycle.gear);
+//use class syntax to define  a constructor  function
+//var SpaceShuttle=function(targetPlanet){// other way
+class SpaceShuttle{
+    constructor(targetPlanet){
+        this.targetPlanet=targetPlanet;
+    }
+    
+};
+var zeus=new SpaceShuttle('Jupiter');
+console.log(zeus.targetPlanet);
+
+function makeClass(){
+    class Vegetable{
+        constructor(name){
+            this.name=name;
+        }
+    }
+    return Vegetable;
+};
+const Vegetable=makeClass();
+const carrot=new Vegetable("carrot");
+console.log(carrot.name);
+
+//use getters and setters to access to an object
+class Livre{
+    constructor(auteur){
+        //_auteur private variable
+        this._auteur=auteur;
+    }
+    get ecrivain(){
+        return this._auteur;
+    }
+    set ecrivain(updateEcrivain){
+        this._auteur=updateEcrivain;
+    }
+};
+
+function dirClass(){
+        class Thermostat{
+            constructor(temp){
+                this._temp=(5/9)*(temp-32);//temperture with F° to C°
+            }
+            get temp(){
+                return this._temp;
+            }
+            set temp(updatedTemp){
+                this._temp=updatedTemp;
+            }
+        };
+        return Thermostat;
+};
+const Thermostat=makeClass();
+const thermos=new Thermostat(76);
+let temp=thermos.temp;
+thermos.temp=26;
+temp=thermos.temp;
+console.log(temp);
+
+//getter and setter are written like properties
+//Understand the difference between import and export
+import {capitalizeString}   from "./export_file.";
+const cap=capitalizeString("hello!");
+
+console.log(cap);
+//use export to reuse a code block 
+//check export_file.js
+
+// use * to import everything from a file
+import * as capitalizeString from "./export_file";
+
+//create an export fallback with  export default
+//check export_file.js
+
+//import default export
+import subtract from "export_file";
+subtract(7,4); 
+
+/**ES6 Features
+ * the let/const key word
+ * the arrow function
+ * The for/of loop
+ * for/of lets you loop over data structures that are iterable such as Arrays, Strings, Maps, NodeLists, and more.
+
+The for/of loop has the following syntax:
+
+for (variable of iterable) {
+  // code block to be executed
+}
+
+Example
+const cars = ["BMW", "Volvo", "Mini"];
+let text = "";
+
+for (let x of cars) {
+  text += x + " ";
+}
+
+*Looping over a String
+Example
+let language = "JavaScript";
+let text = "";
+
+for (let x of language) {
+    text += x + " ";
+}
+*JavaScript Maps
+*Being able to use an Object as a key is an important Map feature.
+Example
+// Create Objects
+const apples = {name: 'Apples'};
+const bananas = {name: 'Bananas'};
+const oranges = {name: 'Oranges'};
+
+// Create a new Map
+const fruits = new Map();
+
+// Add new Elements to the Map
+fruits.set(apples, 500);
+fruits.set(bananas, 300);
+fruits.set(oranges, 200);
+
+*JavaScript Sets
+Example
+// Create a Set
+const letters = new Set();
+
+// Add some values to the Set
+letters.add("a");
+letters.add("b");
+letters.add("c");
+
+*JavaScript Classes
+JavaScript Classes are templates for JavaScript Objects.
+
+Use the keyword class to create a class.
+
+Always add a method named constructor():
+
+Using a Class
+When you have a class, you can use the class to create objects:
+
+Example
+const myCar1 = new Car("Ford", 2014);
+const myCar2 = new Car("Audi", 2019);
+
+*JavaScript Promises
+A Promise is a JavaScript object that links "Producing Code" and "Consuming Code".
+
+"Producing Code" can take some time and "Consuming Code" must wait for the result.
+
+Promise Syntax
+const myPromise = new Promise(function(myResolve, myReject) {
+// "Producing Code" (May take some time)
+
+  myResolve(); // when successful
+  myReject();  // when error
+});
+
+// "Consuming Code" (Must wait for a fulfilled Promise).
+myPromise.then(
+// function(value) { /* code if successful  },*/
+// function(error) { /* code if some error */ }
+//);
+
+/*Example Using a Promise
+const myPromise = new Promise((myResolve, myReject)=> {
+  setTimeout(() =>{ myResolve("I love You !!"); }, 3000);
+});
+
+myPromise.then((value)=>{
+  document.getElementById("demo").innerHTML = value;
+});*/
+/**async makes a function return a Promise
+
+await makes a function wait for a Promise
+The Symbol Type
+A JavaScript Symbol is a primitive datatype just like Number, String, or Boolean.
+
+It represents a unique "hidden" identifier that no other code can accidentally access.
+
+For instance, if different coders want to add a person.id property to a person object belonging to a third-party code, they could mix each others values.
+
+Using Symbol() to create a unique identifiers, solves this problem:
+
+Example
+const person = {
+  firstName: "John",
+  lastName: "Doe",
+  age: 50,
+  eyeColor: "blue"
+};
+
+let id = Symbol('id');
+person[id] = 140353;
+// Now person[id] = 140353
+// but person.id is still undefined
+
+
+Symbols are always unique.
+
+If you create two symbols with the same description they will have different values.
+
+Symbol("id") == Symbol("id") // false
+
+
+*Default Parameter Values
+*ES6 allows function parameters to have default values.
+
+Example
+function myFunction(x, y = 10) {
+  // y is 10 if not passed or undefined
+  return x + y;
+}
+myFunction(5); // will return 15
+
+*Function Rest Parameter
+The rest parameter (...) allows a function to treat an indefinite number of arguments as an array:
+
+Example
+function sum(...args) {
+  let sum = 0;
+  for (let arg of args) sum += arg;
+  return sum;
+}
+
+let x = sum(4, 9, 16, 25, 29, 100, 66, 77);
+
+*String.includes()
+The includes() method returns true if a string contains a specified value, otherwise false:
+
+Example
+let text = "Hello world, welcome to the universe.";
+text.includes("world")    // Returns true
+
+*String.startsWith()
+The startsWith() method returns true if a string begins with a specified value, otherwise false:
+
+Example
+let text = "Hello world, welcome to the universe.";
+
+text.startsWith("Hello")   // Returns true
+
+*String.endsWith()
+The endsWith() method returns true if a string ends with a specified value, otherwise false:
+
+Example
+var text = "John Doe";
+text.endsWith("Doe")    // Returns true
+
+*Array.from()
+The Array.from() method returns an Array object from any object with a length property or any iterable object.
+
+Example
+Create an Array from a String:
+
+Array.from("ABCDEFG")   // Returns [A,B,C,D,E,F,G]
+
+*The keys() method returns an Array Iterator object with the keys of an array.
+
+Example
+Create an Array Iterator object, containing the keys of the array:
+
+const fruits = ["Banana", "Orange", "Apple", "Mango"];
+const keys = fruits.keys();
+
+let text = "";
+for (let x of keys) {
+  text += x + "<br>";
+}
+result:
+JavaScript Arrays
+The Array.keys() method returns an Array Iterator object with the keys of the array.
+
+0
+1
+2
+3
+
+Array.keys() is not supported in Internet Explorer.
+
+
+*Array find()
+The find() method returns the value of the first array element that passes a test function.
+
+This example finds (returns the value of ) the first element that is larger than 18:
+
+Example
+const numbers = [4, 9, 16, 25, 29];
+let first = numbers.find(myFunction);
+
+function myFunction(value, index, array) {
+  return value > 18;
+}
+Note that the function takes 3 arguments:
+
+The item value
+The item index
+The array itself
+
+*Array findIndex()
+The findIndex() method returns the index of the first array element that passes a test function.
+
+This example finds the index of the first element that is larger than 18:
+
+Example
+const numbers = [4, 9, 16, 25, 29];
+let first = numbers.findIndex(myFunction);
+
+function myFunction(value, index, array) {
+  return value > 18;
+}
+Note that the function takes 3 arguments:
+
+The item value
+The item index
+The array itself
+
+*New Math Methods
+ES6 added the following methods to the Math object:
+
+Math.trunc():returns the integer part of x: Math.trunc(6.9)//returns 6
+Math.sign(): returns if x is negative, null or positive: Math.sign(-4);// returns -1 |Math.sign(0);//returns 0|Math.sign(4);// returns 1
+Math.cbrt():returns the cube root of x: Math.cbrt(8);// returns 2
+Math.log2():returns the base 2 logarithm of x:Math.log2(2);// returns 1
+Math.log10():returns the base 10 logarithm of x:Math.log10(10);// returns 1
+
+*New Number Properties
+ES6 added the following properties to the Number object:
+
+EPSILON
+MIN_SAFE_INTEGER
+MAX_SAFE_INTEGER
+Example
+let x = Number.EPSILON;// returns 2.220446049250313e-16
+Example
+let x = Number.MIN_SAFE_INTEGER;//returns -9007199254740991
+Example
+let x = Number.MAX_SAFE_INTEGER;//returns 9007199254740991
+
+*New Number Methods
+ES6 added 2 new methods to the Number object:
+
+Number.isInteger()// returns if the number is integerer " true" or not "false"
+Number.isSafeInteger() :A safe integer is an integer that can be exactly represented as a double precision number.
+Example
+Number.isSafeInteger(10);    // returns true
+Number.isSafeInteger(12345678901234567890);  // returns false
+
+*New Global Methods
+ES6 added 2 new global number methods:
+
+isFinite()
+The isFinite() Method
+The global isFinite() method returns false if the argument is Infinity or NaN.
+
+Otherwise it returns true:
+
+Example
+isFinite(10/0);       // returns false
+isFinite(10/1);       // returns true
+
+isNaN()
+The isNaN() Method
+The global isNaN() method returns true if the argument is NaN. Otherwise it returns false:
+
+Example
+isNaN("Hello");       // returns true
+
+*Object entries()
+Example
+Create an Array Iterator, and then iterate over the key/value pairs:
+
+const fruits = ["Banana", "Orange", "Apple", "Mango"];
+const f = fruits.entries();
+
+for (let x of f) {
+  document.getElementById("demo").innerHTML += x;
+}
+ results:
+ JavaScript Arrays
+The entries() method
+entries() returns an Array Iterator object with key/value pairs:
+
+0,Banana
+1,Orange
+2,Apple
+3,Mango
+
+The entries() method is not supported in Internet Explorer 11 (or earlier).
+
+*Modules
+Modules are imported in two differen ways:
+
+Import from named exports
+Import named exports from the file person.js:
+
+import { name, age } from "./person.js";
+
+Import from default exports
+Import a default export from the file message.js:
+
+import message from "./message.js";
+
+
+
+
+*/
+
+</script>
+
+
